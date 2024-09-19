@@ -1,5 +1,4 @@
-
-                                  ShopWorld - Spreading joy one gift at a time: Your new go-to destination for thoughtful presents
+ShopWorld - Spreading joy one gift at a time: Your new go-to destination for thoughtful presents
 
 Home Page
 "Welcome to our gift shop! Browse curated presents, explore categories, and discover featured items."
@@ -16,6 +15,10 @@ Cart Page
 
 Login Page
 "Quickly access your account to view order history, manage favorites, and enjoy personalized recommendations."![ShopWorld5](https://github.com/user-attachments/assets/5d4bf88a-90b0-409f-bcd7-d705f802568c)
+
+
+
+
 
 ![ShopWorld2](https://github.com/user-attachments/assets/60e62e14-eca0-4ecb-a53e-b6c41f2fb69a)
 
