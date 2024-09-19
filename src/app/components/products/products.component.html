@@ -1,0 +1,51 @@
+<!-- <div class="row" style="margin-left: 20px; ">
+    <div class="col-sm-3" *ngFor="let emp of empData;let i=index" style="margin: 30px;">
+      <div class="card" style="width: 16rem;height:344px;background-color: rgb(253, 246, 246);" >
+        <img class="card img-top" [src]="emp.imagepath">
+        <div class="card-body">
+            <span >
+                <h2 class="card-title">{{emp.name}}</h2>
+                <span style="margin-bottom: px;">${{emp.price}}</span>
+            </span>
+          <button href="#" class="btn btn-success" style="height: 44px; width: 120px;margin-left: 70px;margin-top: 10px;">Shop</button>
+        </div>
+      </div>
+    </div>
+</div> -->
+<div class="main">
+<div class= "container">
+  <div class="select"  >
+    <select id="categorySelect" required [(ngModel)]="selectedcategory" (change)="filterbycategory(selectedcategory)">
+      <option selected value="" >All Categories</option>
+      <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+    </select>
+  </div>
+</div>
+<div class= "container">
+  <div class="select"  >
+    <select id="categorySelect" required [(ngModel)]="selectedfilter" (change)="filterbyprice(selectedfilter)">
+      <option selected value="" >None</option>
+      <option value="low">Price(Low-High)</option>
+      <option value="high">Price(High-Low)</option>
+      <option value="a">Price(A-Z)</option>
+      <option value="z">Price(Z-A)</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class='container-fluid row' style="margin-left: 20px;margin-top: 10px">
+    <div class="card col-sm-3 mx-auto" *ngFor="let emp of empData;let i=index" >
+        
+        <img class='img' style=" min-height: 220px;" [src]="emp.imagepath"/>
+        <div class="card-body text-center " >
+            <h5 class="card-title">{{emp.name}}</h5>
+            <p class="card-text">${{emp.price}}</p>
+            <button class="btn" *ngIf="userRole=='user'" (click)="Addtocart(emp)" >Add To Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+             
+            <div style="display: flex;" *ngIf="userRole=='admin'">
+              <button class="btnn-1 btn-danger"  (click)="DelPro(emp.id)">Delete </button><i class="fa-solid fa-trash-can"></i>
+              <button class="btnn-2  btn-success" (click)="EditPro(emp.id)">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+.btnn{
+    background-color: rgb(255, 12, 68);
+    width: 370px;
+    margin-top: 30px;
+    margin-left: 620px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 2px;
+    color: white;
+    border-width: 0px;
+    padding: 6px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btn-empty{
+    background-color: rgb(26, 25, 25);
+    width: 370px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 2px;
+    color: white;
+    border-width: 0px;
+    padding: 6px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btn{
+    margin-top: 140px;
+    margin-left: 449px;
+}

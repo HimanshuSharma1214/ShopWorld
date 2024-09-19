@@ -1,0 +1,101 @@
+<div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <span>
+            MYCART
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+          <ul class="navbar-nav  ">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" routerLink="/products">
+                Products
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                Why Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="index.html">
+                Testimonial
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/contact">Contact Us</a>
+            </li>
+          </ul>
+          <!-- if  loggined  -->
+          <div class="user_option" *ngIf="authState" >  
+            <form class="form-inline " style="margin-right: 26px;">
+              <button class="btn nav_search-btn" type="submit">
+                <input style="border-radius: 5px; margin-right: 4px;">
+                <i class="fa fa-search"  aria-hidden="true"></i>
+              </button>
+            </form>
+            <a routerLink="/cart">
+              <i class="fa fa-shopping-bag" aria-hidden="true"><span class="badgedd" *ngIf="bagcount>0">{{bagcount}}</span></i>
+            </a>
+            <a >
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span>
+                {{userType}}
+              </span>
+            </a>
+        
+        
+         <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Example icon-button with a menu">
+                   <mat-icon style="color: rgb(0, 0, 0);">more_vert</mat-icon>
+            </button>
+
+            <mat-menu #menu1="matMenu">
+                 <button mat-menu-item (click)="orders()">
+                        <mat-icon>check_circle_outline</mat-icon>
+                        Orders
+                 </button>
+                 <button mat-menu-item (click)="logout()" >
+                        <mat-icon>power_settings_new</mat-icon>
+                        Logout
+                 </button>
+                 <div *ngIf="userType=='admin'" routerLink="/addproduct">
+                    <button mat-menu-item >
+                      <mat-icon>people</mat-icon>
+                      Handle Products
+                    </button>
+                 </div>
+            </mat-menu>
+          </div>
+        <!-- if  loggined  -->
+
+          <!-- if not loggined  -->
+          <div class="user_option"  *ngIf="!authState">
+            <a routerLink="/login">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span>
+                Login
+              </span>
+            </a>
+            <a routerLink="">
+              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            </a>
+            <!-- <form class="form-inline ">
+              <button class="btn nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form> -->
+          </div>
+          <!-- if not loggined  -->
+        </div>
+      </nav>
+    </header>
+</div>

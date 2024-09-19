@@ -1,0 +1,53 @@
+<div *ngIf="(empData.length>0) && userType=='user'">
+   <main class="container">
+       <h1 style="margin-left: 30px;color:#1D267D;margin-top: 14px;">All Orders</h1>
+       <div *ngIf="userType=='user'">
+            <table class="table .table-bordered">
+                   <tbody *ngFor="let emp of empData">
+                        <tr>
+                            <td><img src="{{emp.imagepath}}" style="width: 140px;height: 100px;"/></td>
+                            <td>{{emp.productName}}</td>
+                            <td>&dollar;{{emp.price}}</td>
+                            <td>{{emp.quantity}}</td>
+                        </tr>
+                   </tbody>
+                   <td></td>
+                   <td></td>
+                   <td>Total:&dollar;{{totalprice}}</td>
+                   <td></td>
+            </table>
+            <button></button>
+       </div>
+       <button class="btn-empty" style="margin-left: 77 0px;" routerLink="/products">Continue Shopping</button>
+   </main>
+   
+</div>
+
+
+<div class="btn" *ngIf="(empData.length==0) && userType=='user'">
+   <h1>NO ORDERS YET</h1>
+   <button class="btn-empty" routerLink="/products">SHOP MORE</button>
+</div>
+
+<div *ngIf="userType=='admin'">
+     <main class="container">
+        <h1 style="margin-left: 30px;color:#1D267D;margin-top: 14px;">All Orders</h1>
+        <div *ngIf="userType=='admin'">
+             <table class="table .table-bordered">
+                    <tbody *ngFor="let emp of adminData">
+                         <tr>
+                             <td><img src="{{emp.imagepath}}" style="width: 140px;height: 100px;"/></td>
+                             <td>{{emp.productName}}</td>
+                             <td>{{emp.price}}</td>
+                             <td>{{emp.quantity}}</td>
+                         </tr>
+                    </tbody>
+                    <td></td>
+                    <td></td>
+                    <td>Total:</td>
+                    <td></td>
+             </table>
+             
+        </div>
+     </main>
+</div>
